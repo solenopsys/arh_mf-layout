@@ -1,0 +1,14 @@
+[
+  {
+    "name": "CI",
+    "link": "/ci",
+    "icon": "/assets/icons/53-Logos/19-Developer-Communities/developer-community-github-1.svg",
+    "items": [
+      {
+        "name": "Pipelines",
+        "link": "/ci/pipelines",
+        "icon": "/assets/icons/11-Content/02-Books/book-book-pages.svg"
+      }]
+  }
+
+]
