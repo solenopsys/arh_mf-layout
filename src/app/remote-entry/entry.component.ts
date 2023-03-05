@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'hyperconverged-ci-entry',
+  selector: 'sc-ci-entry',
   template: `<div class="remote-entry">
     <h2>ci's Remote Entry Component</h2>
   </div>`,
