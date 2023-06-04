@@ -1,8 +1,7 @@
 {
   "name": "@solenopsys/mf-ci",
-  "version": "0.9.1",
+  "version": "0.1.0",
   "scripts": {
-    "test": "node index.js",
-    "build": "etsc"
+    "build": "ng-packagr -p ng-package.json -c ../../../../tsconfig.base.json"
   }
 }
