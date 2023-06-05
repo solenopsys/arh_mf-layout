@@ -2,6 +2,6 @@
   "name": "@solenopsys/mf-ci",
   "version": "0.1.0",
   "scripts": {
-    "build": "ng-packagr -p ng-package.json -c ../../../../tsconfig.base.json"
+    "build": "ng-packagr -p ng-package.json -c ../../../../tsconfig.packages.json"
   }
 }
