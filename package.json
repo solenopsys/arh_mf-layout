@@ -1,6 +1,9 @@
 {
   "name": "@solenopsys/mf-ci",
   "version": "0.1.0",
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^16.1.0"
+  },
   "scripts": {
     "build": "ng-packagr -p ng-package.json -c ../../../../tsconfig.packages.json"
   }
