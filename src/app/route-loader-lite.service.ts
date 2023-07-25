@@ -37,6 +37,8 @@ export class RouteLoaderServiceLite {
 
     loadedModules: { [key: string]: boolean } = {}
 
+    rs = [];
+
     public setLoadFunc(data: { load, mapping }) {
         this.loadMod = data.load
         this.mapping = data.mapping
@@ -59,11 +61,11 @@ export class RouteLoaderServiceLite {
                     const path = firstSegmentOfUrl;
                     let mappingElement = this.mapping[firstSegmentOfUrl];
                     if (mappingElement) {
-                        const rs = [];
 
-                        rs.push(loadWrapper(path, mappingElement, this.loadMod));
-                        console.log("RS", rs)
-                        this.router.resetConfig([...rs, ...BASE_ROUTES]);
+
+                        this.rs.push(loadWrapper(path, mappingElement, this.loadMod));
+
+                        this.router.resetConfig([...this.rs, ...BASE_ROUTES]);
                         this.loadedModules[firstSegmentOfUrl] = true;
                         this.router.navigate([firstSegmentOfUrl])
                     }
