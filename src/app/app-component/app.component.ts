@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {RouteLoaderServiceLite} from "../route-loader.service";
+import {Component} from '@angular/core';
+import {MenuItemData} from "@solenopsys/ui-navigate";
 
 @Component({
     selector: 'app-root',
@@ -7,6 +7,7 @@ import {RouteLoaderServiceLite} from "../route-loader.service";
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
 
     constructor() {
     }

@@ -39,9 +39,9 @@ export class RouteLoaderServiceLite {
 
     rs = [];
 
-    public setLoadFunc(data: { load, mapping }) {
-        this.loadMod = data.load
-        this.mapping = data.mapping
+    public setLoadFunc(loadFunc: () => any, mapping: { [key: string]: string }) {
+        this.loadMod = loadFunc
+        this.mapping = mapping
     }
 
     constructor(

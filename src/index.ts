@@ -1,19 +1,24 @@
+
+
 export * from './app/entry.module';
 import {RemoteEntryModule} from "./app/entry.module";
 
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 
 
-export const MICRO=RemoteEntryModule;
 
-export function init(mod,data){
+
+export function init(dataPath,loadFunc,mapping){
     platformBrowserDynamic()
-        .bootstrapModule(mod).then((module)=>{
+        .bootstrapModule(RemoteEntryModule).then((module)=>{
 
             // @ts-ignore
-            module.instance.setLoadFunc(data);
-        })
+            module.instance.setConfigSource(dataPath,loadFunc,mapping);
 
+        })
         .catch((err) => console.error(err));
 }
+
+
+
 
