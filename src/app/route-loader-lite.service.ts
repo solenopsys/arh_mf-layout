@@ -18,12 +18,13 @@ export const BASE_ROUTES = [
 ]
 
 
-const loadWrapper = (key, modName, fn): any => { //  const remoteEntry = host + `remoteEntry.js`;
+const loadWrapper = (key, conf:{module:string,data:any}, fn): any => { //  const remoteEntry = host + `remoteEntry.js`;
     return {
         path: key,
-        loadChildren: () => fn(modName).then(m => {
-            return m.MICRO
-        })
+        loadChildren: () => fn(conf.module).then(m => {
+            return m.MICRO //todo
+        }),
+        data: conf.data
     };
 };
 
@@ -33,13 +34,13 @@ const loadWrapper = (key, modName, fn): any => { //  const remoteEntry = host + 
 })
 export class RouteLoaderServiceLite {
     loadMod: any;
-    mapping: { [key: string]: string } = {};
+    mapping: { [key: string]: { module: string, data: any } } = {};
 
     loadedModules: { [key: string]: boolean } = {}
 
     rs = [];
 
-    public setLoadFunc(loadFunc: () => any, mapping: { [key: string]: string }) {
+    public setLoadFunc(loadFunc: () => any, mapping: { [key: string]: { module: string, data: any } }) {
         this.loadMod = loadFunc
         this.mapping = mapping
     }

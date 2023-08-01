@@ -1,0 +1,31 @@
+<body class="body-wrapper">
+
+
+<div class="full-height">
+    <div class="top-pane-wrapper" *ngIf="$panTopPane |async; let topPaneConfig">
+        <ui-top-pane [config]="topPaneConfig" [logo]="$logo|async" (tabSelect)="selectTab($event)"></ui-top-pane>
+    </div>
+
+
+    <div class="left-block">
+        <div [ngClass]="mobileMenu?'main_menu_mobile':'main_menu'" (click)="mobileMenu=false">
+            <div class="main_menu_wrapper"  *ngIf="$leftPanel |async; let panelConfig">
+                <ui-dynamic-loader [config]="panelConfig"  ></ui-dynamic-loader>
+            </div>
+        </div>
+    </div>
+
+    <div class="main_content">
+        <router-outlet></router-outlet>
+    </div>
+
+    <!--    <div class="rigth-block">-->
+    <!--        <div [ngClass]="mobileMenu?'main_menu_mobile':'main_menu'" (click)="mobileMenu=false">-->
+    <!--            <div class="main_menu_wrapper">-->
+    <!--                <ui-menu [data]="menu"></ui-menu>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+</div>
+
+</body>
