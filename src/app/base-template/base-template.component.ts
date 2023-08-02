@@ -3,14 +3,14 @@ import {Store} from '@ngxs/store';
 import {Observable} from 'rxjs';
 import {TopPaneConfig} from "@solenopsys/ui-navigate";
 import {ColorSchemesService} from "@solenopsys/ui-themes";
-import {ModulesService} from "@solenopsys/fl-globals";
+import {APP_SELECTOR, ModulesService} from "@solenopsys/fl-globals";
 import {Router} from "@angular/router";
 import {Navigate} from "@ngxs/router-plugin";
 import {InterfaceStateModel, PanelConfig, SelectTab, SetLeftPanel} from "@solenopsys/ui-templates";
 
 
 @Component({
-    selector: 'app-root',
+    selector: APP_SELECTOR,
     templateUrl: './base-template.component.html',
     styleUrls: ['./base-template.component.scss'],
 })

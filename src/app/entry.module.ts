@@ -12,7 +12,7 @@ import {BaseTemplateComponent} from "./base-template/base-template.component";
 import {Subject} from "rxjs";
 import {InterfaceState, MenuState, SetTabs, UITemplatesModule} from "@solenopsys/ui-templates";
 
-import {trailingSlash} from "@solenopsys/fl-globals";
+import {LayoutEntry, trailingSlash} from "@solenopsys/fl-globals";
 
 
 const $logo = new Subject();
@@ -44,7 +44,7 @@ const $logo = new Subject();
     ],
     bootstrap: [BaseTemplateComponent]
 })
-export class RemoteEntryModule {
+export class RemoteEntryModule implements LayoutEntry{
     constructor(private al: RouteLoaderServiceLite, private store: Store) {
 
     }
