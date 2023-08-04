@@ -32,7 +32,7 @@ export class BaseTemplateComponent {
                 private store: Store,
                 private modules: ModulesService,
                 @Inject("logo")
-                private $logo: Observable<string>
+                protected $logo: Observable<string>
     ) {
         cs.initColors(this.elementRef.nativeElement.style);
         this.$panTopPane = this.store.select(state => (state.interface as InterfaceStateModel).topToolbar.topPaneConfig);
