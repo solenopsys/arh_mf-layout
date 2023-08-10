@@ -22,7 +22,7 @@ const loadWrapper = (key, conf:{module:string,data:any}, fn): any => { //  const
     return {
         path: key,
         loadChildren: () => fn(conf.module).then(m => {
-            return m.MICRO //todo
+            return m.ENTRY.module //todo
         }),
         data: conf.data
     };
