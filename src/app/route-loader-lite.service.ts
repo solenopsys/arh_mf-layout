@@ -41,6 +41,8 @@ export class RouteLoaderServiceLite {
     rs = [];
 
     public setLoadFunc(loadFunc: () => any, mapping: { [key: string]: { module: string, data: any } }) {
+        console.log("SET LOAD FUNCTION ", mapping)
+
         this.loadMod = loadFunc
         this.mapping = mapping
     }
