@@ -10,7 +10,7 @@ import {NgxsRouterPluginModule} from "@ngxs/router-plugin";
 import {BaseTemplateComponent} from "./base-template/base-template.component";
 
 import {Subject} from "rxjs";
-import {InterfaceState, MenuState, SetTabs, UITemplatesModule} from "@solenopsys/ui-templates";
+import {InterfaceState,  MenuState, SetTabs, UITemplatesModule} from "@solenopsys/ui-templates";
 
 import {LayoutEntry, trailingSlash} from "@solenopsys/fl-globals";
 
@@ -41,6 +41,7 @@ const $logo = new Subject();
             {provide: "assets_dir", useValue: ""},
             {provide: "logo", useValue: $logo},
         ]),
+
     ],
     bootstrap: [BaseTemplateComponent]
 })
